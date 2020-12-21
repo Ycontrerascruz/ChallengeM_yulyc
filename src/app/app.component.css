@@ -1,0 +1,183 @@
+
+header{
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+.input div {
+    width: 525px;
+    background-color: white;
+    border: 1px solid;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+}
+.buscador{
+    width: 470px;
+    height: 35px;
+    border: none;
+    outline: none;
+}
+
+
+.lupa{
+    background-image: url('../assets/icons/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.logomarvel{
+    height: 50px;
+    padding: 5px;
+
+margin-left: 15px;
+}
+main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+}
+
+.characters {
+    background-color:#f9f7f7;
+}
+.characters-title{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px;
+}
+.character-input{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.characters-image{
+    display: flex;
+    justify-content: flex-start;
+}
+.characters-image img{
+    height: 50px;
+}
+
+.character-input{
+
+}
+aside{
+    background-color: #ebebeb;
+}
+.aside-title{
+    display: flex;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+.aside-title img{
+    height: 40px;
+margin: 20px;
+}
+
+.aside-contents{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.aside-contents a {
+    background-image: url('../assets/icons/btn-delete.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+left: 130px;
+top: 20px;
+
+}
+.aside-contents img {
+    height: 280px;
+
+display: block;
+margin: 0 auto;
+max-width: 100%;
+width: 250px;
+
+    /*  */
+    
+}
+
+.superhero{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .superhero-text{
+    
+    margin: 20px
+    }   
+.superhero-info{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -28px;
+margin-left: -18px;
+}
+.superhero-info img{
+    border-radius: 50%;
+    height: 230px;
+    
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 94%;
+}
+
+.superhero-info div{
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: start;
+}
+
+.superhero-button{
+background-color:#ee171f;
+border: #ee171f;
+height: 15%;
+}
+.superhero-button a{
+text-decoration: none;
+color: white;
+}
+
+.superhero-comics ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  
+}
+.superhero-comics ul li{
+    list-style: none;
+}
+.superhero-comics ul li a{
+    text-decoration: none;
+color: rgb(126, 125, 125);
+}
+
+footer{
+    background-color: black;
+    width: 100%;
+    height: 60px;
+}
+footer h3{
+    color: white;
+}
