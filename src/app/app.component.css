@@ -121,9 +121,10 @@ width: 250px;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    background-color:#f9f7f7;
     }
     .superhero-text{
-    
+    background-color: white;
     margin: 20px
     }   
 .superhero-info{
@@ -153,11 +154,9 @@ align-items: start;
 background-color:#ee171f;
 border: #ee171f;
 height: 15%;
-}
-.superhero-button a{
-text-decoration: none;
 color: white;
 }
+
 
 .superhero-comics ul{
     display: grid;

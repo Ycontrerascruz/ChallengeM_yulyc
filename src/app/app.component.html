@@ -1,5 +1,5 @@
 
-    <header>
+<header>
         <div>
             <img class="logomarvel" src="assets/icons/logo.png" alt="logo Marvel">
         </div>
@@ -11,6 +11,7 @@
         </section>
     </header>
 <main>
+
     <section class="characters" >
         <div class="characters-title">
           <section class="characters-image">
@@ -30,36 +31,38 @@
    
         <section class="superhero">
         
-          <div class="superhero-text">
-            <section class="superhero-info">
-              <img src="assets/icons/flor.jpg" alt="">
+          <div class="superhero-text"  *ngFor="let character of allcharacters | async |paginate:{itemsPerPage:10,currentPage:page} ">
+            
+            <section class="superhero-info" >
+              <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="">
               <div >
-              <h3>SPIDER MAN</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eligendi sunt mollitia dolore ipsam quaerat tempora modi ipsa, a distinctio!. </p>
-              <button class="superhero-button"><a href="">VIEW MORE</a></button>
+              <h3>{{character.name}}</h3>
+              <p>{{character.description}}</p>
+              <button (click)="toogle()" class="superhero-button">VIEW MORE</button>
              </div>
             </section>
            <section class="superhero-comics">
              <h2>Related comics                 
-             </h2>
+            </h2>
+             
              <ul>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-                 <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+                 <li ></li>
+                
+                
+                
              </ul>
             </section>
            </div>
 
+          
+               
+      
+
      
         </section>
     </section>
+
+    
 
    
     <aside>
@@ -89,9 +92,17 @@
     </div>
     
     </aside> 
-
+  
   </main> 
+  <section> <!--  prueba api -->
+  
+    <pagination-controls  (pageChange)="page=$event">
 
+    </pagination-controls>
+
+    
+     
+  </section>
   
      
   <footer>
