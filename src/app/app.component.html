@@ -1,110 +1,142 @@
-
 <header>
+    <div>
+        <img class="logomarvel" src="assets/icons/logo.png" alt="logo Marvel">
+    </div>
+    <section class="input">
         <div>
-            <img class="logomarvel" src="assets/icons/logo.png" alt="logo Marvel">
+            <input class="buscador" type="text" placeholder="Search caracter.." [(ngModel)]="model" [ngbTypeahead]="search" (focus)="focus$.next($any($event).target.value)" (click)="click$.next($any($event).target.value)" #instance="ngbTypeahead">
+            <a class="lupa" href=""></a>
         </div>
-        <section class="input">
-            <div>
-                <input class="buscador" type="text" name="" id="" placeholder="Search caracter..">
-                <a class="lupa" href=""></a>
-            </div>
-        </section>
-    </header>
+    </section>
+</header>
 <main>
 
-    <section class="characters" >
+    <section class="characters">
         <div class="characters-title">
-          <section class="characters-image">
-            <img src="assets/icons/characters.png" alt="">
-            <h2>Characters</h2>
-          </section>
-             <section class="character-input">
-              <form name="formulario" method="post" action="">
-                <select name="" > 
+            <section class="characters-image">
+                <img src="assets/icons/characters.png" alt="">
+                <h2>Characters</h2>
+            </section>
+            <section class="character-input">
+                <form name="formulario" method="post" action="">
+                    <select name=""> 
                   <option value="1"></option>
                   <option value="2"></option> 
                   <option value="3"></option>
                 </select>
-              </form>
-            </section> 
+                </form>
+            </section>
         </div>
-   
+
         <section class="superhero">
-        
-          <div class="superhero-text"  *ngFor="let character of allcharacters | async |paginate:{itemsPerPage:10,currentPage:page} ">
-            
-            <section class="superhero-info" >
-              <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="">
-              <div >
-              <h3>{{character.name}}</h3>
-              <p>{{character.description}}</p>
-              <button (click)="toogle()" class="superhero-button">VIEW MORE</button>
-             </div>
-            </section>
-           <section class="superhero-comics">
-             <h2>Related comics                 
-            </h2>
-             
-             <ul>
-                 <li ></li>
-                
-                
-                
-             </ul>
-            </section>
-           </div>
 
-          
-               
-      
 
-     
+            <div class="superhero-text" *ngFor="let character of allcharacters | async |paginate:{itemsPerPage:10,currentPage:page} ">
+
+                <section class="superhero-info">
+                    <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="">
+                    <div>
+                        <h3>{{character.name}}</h3>
+                        <p>{{character.description}}</p>
+                        <button (click)="toogle()" class="superhero-button">VIEW MORE</button>
+                    </div>
+                </section>
+                <section class="superhero-comics">
+                    <h2>Related comics
+                    </h2>
+
+                    <ul>
+                        <li *ngFor="let comic of character.comics.items let i=index  ">
+                            <button *ngIf="i<4" (click)="open(content)">{{comic.name}}</button>
+                        </li>
+
+
+
+                    </ul>
+                </section>
+
+
+
+                <ng-template #content let-modal>
+                    <div class="modal-header">
+
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                      
+                      </button>
+                        <span aria-hidden="true">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <section>
+                            <img src="assets/icons/flor.jpg" alt="comic" width="40px" height="40px">
+                        </section>
+                        <section>
+                            <h2>Lorem ipsum dolor sit amet.</h2>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa fugiat sint magni ut rem facere omnis at numquam labore esse sapiente sunt ratione debitis quasi deserunt, dolor nam mollitia.
+                            </h3>
+                        </section>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                    </div>
+                </ng-template>
+
+            </div>
+
+
+
+
+
+
         </section>
     </section>
 
-    
 
-   
+
+
     <aside>
         <div class="aside-title">
-          <img src="assets/icons/favourites.png" alt="favourites">
-          <h2>My favourites</h2>
+            <img src="assets/icons/favourites.png" alt="favourites">
+            <h2>My favourites</h2>
         </div>
         <div class="aside-contents">
             <a href=""></a>
             <img src="assets/icons/flor.jpg" alt="comic favorito">
-            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint?   </h4>
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint? </h4>
         </div>
         <div class="aside-contents">
             <a href=""></a>
             <img src="assets/icons/flor.jpg" alt="comic favorito">
-            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint?  </h4>
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint? </h4>
         </div>
         <div class="aside-contents">
-          <a href=""></a>
-          <img src="assets/icons/flor.jpg" alt="comic favorito">
-          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint?   </h4>
-      </div>
-      <div class="aside-contents">
-        <a href=""></a>
-        <img src="assets/icons/flor.jpg" alt="comic favorito">
-        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint?    </h4>
-    </div>
-    
-    </aside> 
-  
-  </main> 
-  <section> <!--  prueba api -->
-  
-    <pagination-controls  (pageChange)="page=$event">
+            <a href=""></a>
+            <img src="assets/icons/flor.jpg" alt="comic favorito">
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint? </h4>
+        </div>
+        <div class="aside-contents">
+            <a href=""></a>
+            <img src="assets/icons/flor.jpg" alt="comic favorito">
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sint? </h4>
+        </div>
+
+    </aside>
+
+</main>
+<section>
+    <!--  prueba api -->
+
+    <pagination-controls (pageChange)="page=$event">
 
     </pagination-controls>
 
-    
-     
-  </section>
-  
-     
-  <footer>
+
+
+</section>
+
+
+
+
+<footer>
     <h3>Lorem ipsum dolor sit amet.</h3>
-  </footer>
+</footer>

@@ -17,3 +17,4 @@ URL_API='https://gateway.marvel.com:443/v1/public/characters?apikey=84bcbbd707bd
     .pipe(map((data:any)=>data.data.results))
   }
 }
+
